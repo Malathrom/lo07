@@ -7,7 +7,7 @@
     <div class="mainText">
         <h1>Votre parcours</h1>
         <p class="lead">
-        <div class="formTaille">
+        <div class="forceSize">
             <form class="form-signin" action="addStudentAction.php">
                 <label>Numéro d'étudiant</label>
                 <input type="text" name="numEtu" class="form-control" placeholder="Ex: 42563" required><br/>

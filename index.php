@@ -1,14 +1,23 @@
 <?php include 'header.php'; ?>
 
 <div class="container">
+    <div style="max-width: 600px;
+    padding: 15px;
+    margin: 0 auto;">
+        <img src="utt.jpg" data-src="holder.js/200x200" class="img-thumbnail">
+    </div>
 
     <div class="mainText">
-        <h1>Bienvenue sur UTT parcours.</h1>
+        <h1>Bienvenue sur UTT Parcours.</h1>
     </div>
 
     <div class="forceCenter">
         <div class="row">
-            <div class="formTaille">
+            <div class="forceSize">
+
+
+
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Ajouter un étudiant à la base de données</h3>
