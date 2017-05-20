@@ -19,10 +19,10 @@
                 </div>
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">Consulter liste étudiants</h3>
                     </div>
                     <div class="panel-body">
-                        Panel content
+                        <a href="listStudents.php" class="btn btn-lg btn-danger">Liste étudiants</a>
                     </div>
                 </div>
 
