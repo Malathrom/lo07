@@ -14,7 +14,7 @@
                         <h3 class="panel-title">Ajouter un étudiant à la base de données</h3>
                     </div>
                     <div class="panel-body">
-                        <a href="addStudent.php" class="btn btn-lg btn-danger">Ajouter étudiant</a><br>
+                        <a href="addStudent.php" class="btn btn-lg btn-default">Ajouter étudiant</a><br>
                     </div>
                 </div>
                 <div class="panel panel-primary">
@@ -22,7 +22,7 @@
                         <h3 class="panel-title">Consulter liste étudiants</h3>
                     </div>
                     <div class="panel-body">
-                        <a href="listStudents.php" class="btn btn-lg btn-danger">Liste étudiants</a>
+                        <a href="listStudents.php" class="btn btn-lg btn-default">Liste étudiants</a>
                     </div>
                 </div>
 
