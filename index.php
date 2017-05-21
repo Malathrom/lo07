@@ -38,10 +38,10 @@
 
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Panel title</h3>
+                        <h3 class="panel-title">Ajouter un nouveau Cursus</h3>
                     </div>
                     <div class="panel-body">
-                        Panel content
+                        <a href="addCursus.php" class="btn btn-lg btn-default">Ajouter Cursus</a>
                     </div>
                 </div>
                 <div class="panel panel-info">
