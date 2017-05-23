@@ -6,19 +6,19 @@
 
   <div class="mainText">
       <h1>Votre parcours</h1>
-      <div class="well">
+      <div class="well" style="text-align: left">
           <p>
-Numéro Semestre: numéro de votre semestre à l'UTT
+Numéro Semestre: numéro de votre semestre à l'UTT</br>
 Label Semestre: sigle d'une branche(TC,ISI,SRT,...) et numéro du semestre dans cette branche
-Sigle: sigle d’une UE, label d’un stage, ...
-Catégorie:CS, TM, EC,HT, ME, ST, SE, HP, NPML,...
-Affectation: à quelle partie du cursus doivent être affectés les crédits associés à l’élément de formation
-Utt?: fait à l'UTT(Y) ou hors de l'UTT(N)
-Profil: Y (oui) ou N (non), ce qui permet de savoir si l’élément de formation appartient au profil
+Sigle: sigle d’une UE, label d’un stage, ...</br>
+Catégorie:CS, TM, EC,HT, ME, ST, SE, HP, NPML,...</br>
+Affectation: à quelle partie du cursus doivent être affectés les crédits associés à l’élément de formation</br>
+Utt?: fait à l'UTT(Y) ou hors de l'UTT(N)</br>
+Profil: Y (oui) ou N (non), ce qui permet de savoir si l’élément de formation appartient au profil</br>
 de la branche ou de la filière. Cet attribut permet de valider (ou pas) les crédits du TCBR et de
-la filière.
-Credit: nombre de crédits obtenus
-Résultat:A, ...F, ABS, RES, ADM, ...
+la filière.</br>
+Credit: nombre de crédits obtenus</br>
+Résultat:A, ...F, ABS, RES, ADM, ...</br>
           </p>
       </div>
       <p class="lead">
