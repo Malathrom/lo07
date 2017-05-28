@@ -79,7 +79,7 @@
 
 
 </p>
-</div>
+
 
 <div class="well" style="text-align: left">
     <p><ul class="list-group">
