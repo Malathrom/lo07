@@ -18,9 +18,20 @@ addStudent($database, $_GET["numEtu"], $_GET["nom"], $_GET["prenom"], $_GET["TC,
 ?>
 
 <div class="container">
-    <div class="forceSize">
+
+    <div class="forceSize" style="text-align: center">
         <div class="alert alert-success" role="alert">
             <strong>Bravo!</strong> L'étudiant à été ajouté à la base de données.
         </div>
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Consulter liste étudiants</h3>
+            </div>
+            <div class="panel-body">
+                <a href="listStudents.php" class="btn btn-lg btn-default">Liste étudiants</a>
+            </div>
+        </div>
     </div>
+
 </div>

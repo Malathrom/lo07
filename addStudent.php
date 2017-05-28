@@ -17,22 +17,13 @@
                 <input type="text" name="prenom" class="form-control" placeholder="Ex: Gérard" required><br/>
                 <label>Admission</label><br/>
 
-                <label class="radio-inline"><input name="TC,BR" value="TC" type="radio">Tronc Commun</label>
-                <label class="radio-inline"><input name="TC,BR" value="BR" type="radio">Branche</label><br/>
-                <!--
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio">Option 1</label>
-                                        </div>
-                                        <div class="radio">
-                                            <label><input type="radio" name="optradio">Option 2</label>
-                                        </div>
-                                        <div class="radio disabled">
-                                            <label><input type="radio" name="optradio" disabled>Option 3</label>
-                                        </div> -->
+                <label class="radio-inline"><input name="TC,BR" value="TC" type="radio" required>Tronc Commun</label>
+                <label class="radio-inline"><input name="TC,BR" value="BR" type="radio" required>Branche</label><br/>
+
                 <br/>
                 <div class="form-group">
                     <label for="sel1">Filière:</label>
-                    <select class="form-control" name="filiere">
+                    <select class="form-control" name="filiere" required>
                         <option value="?">?</option>
                         <option value='MPL'>MPL</option>
                         <option value="MSI">MSI</option>
@@ -41,18 +32,7 @@
 
                     </select>
                 </div>
-                <!--
-                 <label>Email address</label>
-                 <input type="email" id="inputEmail" class="form-control" placeholder="Email address"  autofocus><br/>
-    
-                 <label>Password</label>
-                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" ><br/>
-    
-                 <div class="checkbox">
-                     <label>
-                         <input type="checkbox" value="remember-me"> Remember me
-                     </label>
-                 </div>-->
+
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Envoyer</button>
             </form>
 
