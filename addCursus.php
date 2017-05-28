@@ -45,11 +45,11 @@
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="sigle1"></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="categorie1"></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="affectation1"></td>
-                    <td><select class="form-control" name="utt1">
+                    <td><select class="form-control" name="utt1" style="width: 115%">
                             <option>Oui</option>
                             <option>Non</option>
                         </select></td>
-                    <td><select class="form-control" name="profil1">
+                    <td><select class="form-control" name="profil1" style="width: 110%">
                             <option>Oui</option>
                             <option>Non</option>
                         </select></td>
