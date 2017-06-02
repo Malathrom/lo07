@@ -3,7 +3,7 @@ function addFields() {
     var button = document.getElementById("trigger");
     var container = document.getElementById("container");
     count++;
-
+    document.getElementById('countline').value = count;
     var newdiv = document.createElement("tr");
     newdiv.innerHTML = "<td name="+"numele"+count +">" + count + "</td>";
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "numsem" + count + "></td>";

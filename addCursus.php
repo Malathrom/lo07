@@ -16,12 +16,14 @@
     </div>
 
 
-    <form class="form-signin" action="addStudentAction.php">
+    <form class="form-signin" action="action.php">
 
+        <input id="countline" name="countline" type="hidden" />
+        <script> document.getElementById('countline').value = count;</script>
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>Num</th>
+                    <th></th>
                     <th>Num Semestre</th>
                     <th>Label Semestre</th>
                     <th>Sigle</th>
@@ -97,6 +99,8 @@
         </p></ul>
 </div>
 </div>
+
+
 
 </body>
 </html>
