@@ -7,6 +7,7 @@ include "baseConnect.php";
 $cursus = [];
 for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
     $element = [];
+    array_push($element, $j);
     array_push($element, $_GET["numsem" . $j]);
     array_push($element, $_GET["label" . $j]);
     array_push($element, $_GET["sigle" . $j]);
@@ -26,19 +27,29 @@ print_r($cursus);
 
 
 
-function addCursus($database, $numEtu, $nom, $prenom, $admission, $filiere) {
+function addElement($database, $element, $numCursus) {
 
-    $req = $database->prepare('INSERT INTO etudiant(numEtu, nom, prenom, admission, filiere) VALUES(:numEtu, :nom, :prenom, :admission, :filiere)');
+    $req = $database->prepare('INSERT INTO eleparcours(numele, numsem, label, sigle, categorie, affectation, utt, profil, credit, resultat, numCursus) VALUES(:numele, :numsem, :label, :sigle, :categorie, :affectation, :utt, :profil, :credit, :resultat, :numCursus)');
     $req->execute(array(
-        'numEtu' => $numEtu,
-        'nom' => $nom,
-        'prenom' => $prenom,
-        'admission' => $admission,
-        'filiere' => $filiere,
+        'numele' => $element[0],
+        'numsem' => $element[1],
+        'label' => $element[2],
+        'sigle' => $element[3],
+        'categorie' => $element[4],
+        'affectation' => $element[5],
+        'utt' => $element[6],
+        'profil' => $element[7],
+        'credit' => $element[8],
+        'resultat' => $element[9],
+        'numCursus' => $numCursus
     ));
 }
-/*
-addCursus($database, $_GET["numEtu"], $_GET["nom"], $_GET["prenom"], $_GET["TC,BR"], $_GET["filiere"]);*/
+
+for ($j = 0; $j < $_GET["countline"]; $j++) {
+    addElement($database,$cursus[$j], 1);
+}
+
+
 ?>
 
 <div class="container">

@@ -5,7 +5,8 @@ function addFields() {
     count++;
     document.getElementById('countline').value = count;
     var newdiv = document.createElement("tr");
-    newdiv.innerHTML = "<td name="+"numele"+count +">" + count + "</td>";
+    newdiv.innerHTML = "<td name=" + "numele" + count + ">" + count + "</td>";
+    newdiv.innerHTML += "<input id='numele' name='numele" + count + "' type='hidden' value=" + count + " />"
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "numsem" + count + "></td>";
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 80%;'name=" + "label" + count + "></td>";
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "sigle" + count + "></td>";
