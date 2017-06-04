@@ -17,6 +17,8 @@
 
 
     <form class="form-signin" action="addCursusAction.php">
+        
+
 
         <input id="countline" name="countline" type="hidden" />
         <input id="numele" name="numele1" type="hidden" value=1 />

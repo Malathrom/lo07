@@ -3,7 +3,6 @@ include "header.php";
 include "baseConnect.php";
 
 
-        
 $cursus = [];
 for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
     $element = [];
@@ -22,10 +21,12 @@ for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
 print_r($cursus);
 
 
+$reponse = $database->query('SELECT MAX(numCursus) FROM cursus');
+$donnees = $reponse->fetch();
+$numCursus = $donnees[0] + 1;
 
-
-
-
+$req = $database->prepare('INSERT INTO cursus(numCursus) VALUES( ? )');
+$req->execute(array($numCursus));
 
 function addElement($database, $element, $numCursus) {
 
@@ -46,10 +47,8 @@ function addElement($database, $element, $numCursus) {
 }
 
 for ($j = 0; $j < $_GET["countline"]; $j++) {
-    addElement($database,$cursus[$j], 1);
+    addElement($database, $cursus[$j], $numCursus);
 }
-
-
 ?>
 
 <div class="container">

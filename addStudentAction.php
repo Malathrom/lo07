@@ -32,6 +32,17 @@ addStudent($database, $_GET["numEtu"], $_GET["nom"], $_GET["prenom"], $_GET["TC,
                 <a href="listStudents.php" class="btn btn-lg btn-default">Liste étudiants</a>
             </div>
         </div>
+
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Ajouter un nouveau Cursus</h3>
+            </div>
+            <div class="panel-body">
+                <a href="addCursus.php" class="btn btn-lg btn-default">Ajouter Cursus</a>
+            </div>
+        </div>
+
     </div>
 
 </div>

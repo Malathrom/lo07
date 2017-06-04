@@ -34,6 +34,7 @@ function afficheStudent($list) {
                 <th>Prénom</th>
                 <th>Admission</th>
                 <th>Filière</th>
+                <th>Ajout Cursus</th>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +44,7 @@ function afficheStudent($list) {
                 <td>Otto</td>
                 <td>TC</td>
                 <td>MPL</td>
+                <td><form action=""
             </tr>
             <tr>
                 <td>45993</td>
