@@ -1,25 +1,32 @@
 
 
-<?php include 'header.php'; ?>
-
-
+<?php
+include 'header.php';
+include "baseConnect.php";
+$list = [];
+$requete = "select * from etudiant";
+$response = $database->query($requete);
+while ($data = $response->fetch()) {
+    array_push($list, [$data["numEtu"], $data["nom"], $data["prenom"], $data["admission"], $data["filiere"]]);
+}
+?>
 
 <script type='text/javascript' src="cursus.js"></script>
-
-
-
-
 <div class="container">
 
     <div class="mainText">
         <h1>Votre parcours</h1><br>
     </div>
-
-
     <form class="form-signin" action="addCursusAction.php">
-        
 
+        <select class="selectpicker" data-live-search="true" name="etu">
+            <?php
+            foreach ($list as $key => $etudiant) {
+                echo "<option value=" . $etudiant[0] . ">" . $etudiant[1] . " " . $etudiant[2] . "</option>";
+            }
+            ?>
 
+        </select>
         <input id="countline" name="countline" type="hidden" />
         <input id="numele" name="numele1" type="hidden" value=1 />
         <script> document.getElementById('countline').value = count;</script>
