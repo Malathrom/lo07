@@ -6,20 +6,26 @@
  * $cursus doit être un tableau de tableaux de 10  valeurs.
  */
 
-function exportCursus($cursus,$etu){
-    $nom =$etu[1][1];
-    $prenom =[2][1];
-    $file = $nom.'_'.$prenom.'.csv';
+function exportCursus($cursus, $etu) {
+    $nom = $etu[1][1];
+    $prenom = [2][1];
+    $file = $nom . '_' . $prenom . '.csv';
     $fp = fopen($file, 'w');
-    
-    foreach ($etu as $fields) {
-        fputcsv($fp, $fields,';');
+    $nb=1;
+    if ($data = fgetcsv($handle, 1000, ";") == FALSE) {
+        foreach ($etu as $fields) {
+            fputcsv($fp, $fields, ';');
+        }
+        fputcsv($fp, array('==', 's_seq', 's_label', 'sigle', 'categorie', 'affectation', 'utt', 'profil', 'credit', 'resultat'));
+        foreach ($cursus as $fields) {
+            fputcsv($fp, $fields, ";");
+        }
+        fputcsv($fp, arrray('END', '', '', '', '', '', '', '', '', ''));
+    }else{
+        $file = $nom . '_' . $prenom . $nb .'.csv';
+        $fp = fopen($file, 'w');
     }
-    fputcsv($fp, array('==','s_seq','s_label','sigle','categorie','affectation','utt','profil','credit','resultat'));
-    foreach ($cursus as $fields) {
-        fputcsv($fp, $fields,";");
-    }
-    fputcsv($fp, arrray('END','','','','','','','','',''));
-};
+}
 
+;
 ?>

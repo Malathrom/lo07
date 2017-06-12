@@ -11,9 +11,9 @@ function addFields() {
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 80%;'name=" + "label" + count + "></td>";
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "sigle" + count + "></td>";
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "categorie" + count + "></td>";
-    newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "affectation" + count + "></td>";
-    newdiv.innerHTML += "<td><select class='form-control'name=" + "utt" + count + " style='width: 115%'><option>Oui</option><option>Non</option></select></td>";
-    newdiv.innerHTML += "<td><select class='form-control'name=" + "profil" + count + " style='width: 110%'><option>Oui</option><option>Non</option></select></td>";
+    newdiv.innerHTML += "<td><select class='form-control' name='affectation" + count +  "' style='width: 115%'><option>TC</option><option>BR</option><option>TCBR</option><option>FCBR</option></select></td>"
+    newdiv.innerHTML += "<td><select class='form-control'name=" + "utt" + count + " style='width: 115%'><option>Y</option><option>N</option></select></td>";
+    newdiv.innerHTML += "<td><select class='form-control'name=" + "profil" + count + " style='width: 110%'><option>Y</option><option>N</option></select></td>";
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "credit" + count + "></td>";
     newdiv.innerHTML += "<td><input type='text' class='form-control input-sm' style='width: 40%;'name=" + "resultat" + count + "></td>";
     container.appendChild(newdiv);

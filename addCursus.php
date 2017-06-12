@@ -27,6 +27,14 @@ while ($data = $response->fetch()) {
             ?>
 
         </select>
+        <div class="col-sm-4">
+
+
+        </div>
+        <div class="col-sm-4">
+
+
+        </div>
         <input id="countline" name="countline" type="hidden" />
         <input id="numele" name="numele1" type="hidden" value=1 />
         <script> document.getElementById('countline').value = count;</script>
@@ -56,14 +64,20 @@ while ($data = $response->fetch()) {
                     <td><input type="text" class="form-control input-sm" style="width: 80%;" name="label1"></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="sigle1"></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="categorie1"></td>
-                    <td><input type="text" class="form-control input-sm" style="width: 40%;" name="affectation1"></td>
+                    
+                    <td><select class="form-control" name="affectation1" style="width: 115%">
+                            <option>TC</option>
+                            <option>BR</option>
+                            <option>TCBR</option>                            
+                            <option>FCBR</option>
+                        </select></td>
                     <td><select class="form-control" name="utt1" style="width: 115%">
-                            <option>Oui</option>
-                            <option>Non</option>
+                            <option>Y</option>
+                            <option>N</option>
                         </select></td>
                     <td><select class="form-control" name="profil1" style="width: 110%">
-                            <option>Oui</option>
-                            <option>Non</option>
+                            <option>Y</option>
+                            <option>N</option>
                         </select></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="credit1"></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="resultat1"></td>
