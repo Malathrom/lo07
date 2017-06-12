@@ -65,11 +65,6 @@ $numCursus = $donnees[0] + 1;
 $req = $database->prepare('INSERT INTO cursus(numCursus) VALUES( ? )');
 $req->execute(array($numCursus));
 
-function addElement($database, $element, $numCursus) {
-
-    
-}
-
 for ($j = 0; $j < count($cursus); $j++) {
     $element=$cursus[$j];
     $req = $database->prepare('INSERT INTO eleparcours(numele, numsem, label, sigle, categorie, affectation, utt, profil, credit, resultat, numCursus) VALUES(:numele, :numsem, :label, :sigle, :categorie, :affectation, :utt, :profil, :credit, :resultat, :numCursus)');
