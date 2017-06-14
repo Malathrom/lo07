@@ -14,18 +14,7 @@
                 <label class="btn btn-primary btn-file">Selectionner fichier CSV<input class="btn"  type="file" name="file" id="file" /></label>
                 <label class="btn btn-success btn-file">Envoyer<input type="submit" name="submit" style="display: none;" /></label>
 
-
-
-
-
-
             </form>
-
-
-
-
-
-
 
         </div>
     </div>
