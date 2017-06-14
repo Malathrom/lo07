@@ -65,9 +65,9 @@ $data = $response2->fetch();
             </form>
         </div>
         <div class="col-sm-4">
-            <form class='form-signin' action='copie.php'>
+            <form class='form-signin' action='copy.php'>
                 <input type=hidden name=numCursus value=" <?php echo $_GET["numCursus"]; ?> ">
-                <button class='btn btn-primary btn-block' type='submit'>Copie</button>
+                <button class='btn btn-primary btn-block' type='submit'>Duplication</button>
             </form>
         </div>
         <div class="col-sm-4">

@@ -18,7 +18,6 @@ for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
     array_push($element, $_GET["resultat" . $j]);
     array_push($cursus, $element);
 }
-print_r($cursus);
 
 
 $reponse = $database->query('SELECT MAX(numCursus) FROM cursus');
@@ -28,11 +27,10 @@ $numCursus = $donnees[0] + 1;
 $req = $database->prepare('INSERT INTO cursus(numCursus) VALUES( ? )');
 $req->execute(array($numCursus));
 
-$numEtu=$_GET["numEtu"];
+$numEtu = $_GET["numEtu"];
 
 $req = $database->prepare('INSERT INTO attachement(numEtu, numCursus) VALUES(?,?)');
 $req->execute(array($numEtu, $numCursus));
-
 
 function addElement($database, $element, $numCursus) {
 

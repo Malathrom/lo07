@@ -17,11 +17,10 @@
     $requete = "select * from cursus c, attachement a, etudiant e where c.numCursus=a.numCursus and a.numEtu=e.numEtu order by c.numCursus";
     $response = $database->query($requete);
     $list = [];
-  
+
     while ($data = $response->fetch()) {
         array_push($list, [$data["numCursus"], $data["numEtu"], $data["nom"], $data["prenom"]]);
-        print_r($data);
-        echo "<br>";
+        
     }
 
     function afficheCursus($list) {
@@ -34,6 +33,13 @@
             echo "<form class='form-signin' action='modify.php'>";
             echo "<input type=hidden name=numCursus value=" . $etudiant[0] . ">";
             echo "<button class='btn btn-primary' type='submit'>Modifier</button>";
+            echo "</form>";
+            echo "</th>";
+            
+            echo "<th>";
+            echo "<form class='form-signin' action='delete.php'>";
+            echo "<input type=hidden name=numCursus value=" . $etudiant[0] . ">";
+            echo "<button class='btn btn-danger' type='submit'>Supprimer</button>";
             echo "</form>";
             echo "</th>";
 
@@ -56,7 +62,7 @@
     </div>
 
 
-    <table class="table table-striped">
+    <table class="table table-striped" style="text-align: center">
         <thead>
             <tr>
                 <th>Numéro Cursus</th>
@@ -64,14 +70,14 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Modifier Cursus</th>
-
+                <th>Supprimer Cursus</th>
                 <th>Voir Cursus</th>
 
             </tr>
         </thead>
         <tbody>
 
-<?php afficheCursus($list) ?>
+            <?php afficheCursus($list) ?>
 
 
 

@@ -10,7 +10,9 @@ while ($data = $response->fetch()) {
     array_push($list, [$data["numEtu"], $data["nom"], $data["prenom"], $data["admission"], $data["filiere"]]);
 }
 ?>
-
+<script>
+    var offset = 0;
+</script>
 <script type='text/javascript' src="cursus.js"></script>
 <div class="container">
 
@@ -56,21 +58,10 @@ while ($data = $response->fetch()) {
                 </div>
 
             </div>
-            
-        </div>
-
-
-
-
-
-        <div class="col-sm-4">
-
 
         </div>
-        <div class="col-sm-4">
 
 
-        </div>
         <input id="countline" name="countline" type="hidden" />
         <input id="numele" name="numele1" type="hidden" value=1 />
         <script> document.getElementById('countline').value = count;</script>

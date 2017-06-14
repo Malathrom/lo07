@@ -1,8 +1,7 @@
 <?php
-
 include "header.php";
 require_once 'baseConnect.php';
-
+$exist = false;
 if (isset($_POST["submit"])) {
 
     if (isset($_FILES["file"])) {
@@ -12,14 +11,10 @@ if (isset($_POST["submit"])) {
             echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
         } else {
             //if file already exists
-            if (file_exists("upload/" . $_FILES["file"]["name"])) {
-                echo $_FILES["file"]["name"] . " already exists. ";
-            } else {
-                //Store file in directory "upload" with the name of "uploaded_file.txt"
-                $storagename = $_FILES["file"]["name"];
-                move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $storagename);
-                echo "Stored in: " . "upload/" . $_FILES["file"]["name"] . "<br />";
-            }
+            //Store file in directory "upload" with the name of "uploaded_file.txt"
+            $storagename = $_FILES["file"]["name"];
+            move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $storagename);
+            echo "Stored in: " . "upload/" . $_FILES["file"]["name"] . "<br />";
         }
     } else {
         echo "No file selected <br />";
@@ -73,7 +68,8 @@ function getEtuCsV($csv) {
     }
     return $etu;
 }
-$csv="upload/" . $_FILES["file"]["name"];
+
+$csv = "upload/" . $_FILES["file"]["name"];
 $cursus = getCursusCsV($csv);
 
 $reponse = $database->query('SELECT MAX(numCursus) FROM cursus');
@@ -103,9 +99,7 @@ for ($j = 0; $j < count($cursus); $j++) {
     ));
 }
 
-$etudiant= getEtuCsV($csv);
-
-
+$etudiant = getEtuCsV($csv);
 
 function addStudent($database, $numEtu, $nom, $prenom, $admission, $filiere) {
 
@@ -118,17 +112,17 @@ function addStudent($database, $numEtu, $nom, $prenom, $admission, $filiere) {
         'filiere' => $filiere,
     ));
 }
-$numEtu =$etudiant[0];
+
+$numEtu = $etudiant[0];
 
 $reponse2 = $database->query('SELECT * FROM etudiant WHERE numEtu=' . $numEtu);
 $donnees2 = $reponse2->fetch();
-$error=false;
-print_r($donnees2);
-echo $donnees2["numEtu"]==$numEtu;
-if ($donnees2["numEtu"]=$numEtu){
-    $error=true;
-}else{
-addStudent($database, $etudiant[0], $etudiant[1], $etudiant[2], $etudiant[3], $etudiant[4]);
+$error = false;
+echo $donnees2["numEtu"] == $numEtu;
+if ($donnees2["numEtu"] = $numEtu) {
+    $error = true;
+} else {
+    addStudent($database, $etudiant[0], $etudiant[1], $etudiant[2], $etudiant[3], $etudiant[4]);
 }
 
 
@@ -143,10 +137,16 @@ $req->execute(array($numEtu, $numCursus));
         <div class="alert alert-success" role="alert">
             <strong>Bravo!</strong> Le cursus a été ajouté à la base de données.
         </div>
-        <?php if ($error){
-            echo '<div class="alert alert-danger" role="alert"><strong>Doublon détécté</strong> L\'etudiant a déja été ajouté</div>';
-        }?>
-
+<?php
+if ($error) {
+    echo '<div class="alert alert-danger" role="alert"><strong>Doublon détécté</strong> L\'etudiant a déja été ajouté</div>';
+}
+?>
+        <?php
+        if ($exist) {
+            echo '<div class="alert alert-danger" role="alert"><strong>Doublon détécté </strong>' . $_FILES["file"]["name"] . ' existe déjà.</div>';
+        }
+        ?>
         <div class="panel-body">
             <a href="index.php" class="btn btn-lg btn-primary">Retour liste cursus</a>
         </div>
