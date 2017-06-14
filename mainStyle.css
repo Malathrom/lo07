@@ -15,3 +15,17 @@ body {
 .forceCenter{
     text-align: center;
 }
+
+/* navbar */
+.navbar-default {
+    background-color: #062854;
+    border-color: #ffffff;
+}
+/* Title */
+.navbar-default .navbar-brand {
+    color: #ffffff;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #ffffff;
+}

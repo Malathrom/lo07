@@ -28,7 +28,7 @@ function posecookies() {
 }
 
 afficheVariable();
-
+/*
 $cursus = [];
 for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
     $element = [];
@@ -45,3 +45,4 @@ for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
 }
 print_r($cursus);
 
+*/

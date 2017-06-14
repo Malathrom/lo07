@@ -1,6 +1,7 @@
-<?php include "header.php";
+<?php
+include "header.php";
 require_once 'baseConnect.php';
-$numCursus = 15;
+$numCursus = $_GET["numCursus"];
 $requete = "select * from eleparcours where numCursus = $numCursus order by numsem";
 $response = $database->query($requete);
 
@@ -18,10 +19,18 @@ function afficheCursus($list) {
         echo "</tr>";
     }
 }
+
+$requete2 = "select * from etudiant e, attachement a where e.numEtu=a.numEtu and a.numCursus=" . $numCursus;
+$response2 = $database->query($requete2);
+$data = $response2->fetch();
 ?>
 <div class="container">
     <div class="page-header" style="text-align: center">
-        <h1>Liste étudiants</h1>
+        <h1>Affichage cursus</h1>
+
+        <h4><?php
+            echo $data["nom"] . " " . $data["prenom"];
+            ?></h4>
     </div>
 
 
@@ -48,5 +57,30 @@ function afficheCursus($list) {
         </tbody>
 
     </table>
+    <div class="row" style="text-align: center;">
+        <div class="col-sm-4">
+            <form class='form-signin' action='modify.php'>
+                <input type=hidden name=numCursus value="  <?php echo $_GET["numCursus"]; ?> ">
+                <button class='btn btn-primary btn-block' type='submit'>Modifier</button>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <form class='form-signin' action='copie.php'>
+                <input type=hidden name=numCursus value=" <?php echo $_GET["numCursus"]; ?> ">
+                <button class='btn btn-primary btn-block' type='submit'>Copie</button>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <form class='form-signin' action='exportCursus.php'>
+                <input type=hidden name=numCursus value=" <?php echo $_GET["numCursus"]; ?> ">
+                <button class='btn btn-primary btn-block' type='submit'>Export</button>
+            </form>
+        </div>
 
-</div>
+    </div>
+    <br>
+    <form class='form-signin' action='reglement.php'>
+        <input type=hidden name=numCursus value=" <?php echo $_GET["numCursus"]; ?> ">
+        <button class='btn btn-success btn-lg btn-block' type='submit'>Vérifier validité cursus</button>
+    </form>
+</div> 

@@ -19,14 +19,50 @@ while ($data = $response->fetch()) {
     </div>
     <form class="form-signin" action="addCursusAction.php">
 
-        <select class="selectpicker" data-live-search="true" name="etu">
-            <?php
-            foreach ($list as $key => $etudiant) {
-                echo "<option value=" . $etudiant[0] . ">" . $etudiant[1] . " " . $etudiant[2] . "</option>";
-            }
-            ?>
 
-        </select>
+        <div class="row" style="text-align: center">
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Choisir un etudiant existant</h3>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <select class="selectpicker" data-live-search="true" name="numEtu" required>
+                            <?php
+                            foreach ($list as $key => $etudiant) {
+                                echo "<option value=" . $etudiant[0] . ">" . $etudiant[1] . " " . $etudiant[2] . "</option>";
+                            }
+                            ?>
+
+                        </select>
+
+
+                        <br>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Ajouter un nouvel étudiant à la base de données</h3>
+                    </div>
+                    <div class="panel-body">
+                        <a href="addStudent.php" class="btn btn-default">Ajouter Etudiant</a>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+
+
+
+
         <div class="col-sm-4">
 
 
@@ -64,7 +100,7 @@ while ($data = $response->fetch()) {
                     <td><input type="text" class="form-control input-sm" style="width: 80%;" name="label1"></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="sigle1"></td>
                     <td><input type="text" class="form-control input-sm" style="width: 40%;" name="categorie1"></td>
-                    
+
                     <td><select class="form-control" name="affectation1" style="width: 115%">
                             <option>TC</option>
                             <option>BR</option>
@@ -92,17 +128,10 @@ while ($data = $response->fetch()) {
         <button id="trigger" onclick="addFields()" class="btn btn-info" type="button">Ajouter ligne</button>
 
 
-
-
-
-
         <div class="forceSize">
             <button class="btn btn-lg btn-primary btn-block" type="submit">Envoyer</button>
         </div>
     </form>
-
-
-
 
 </p>
 
@@ -118,8 +147,8 @@ while ($data = $response->fetch()) {
         <li class="list-group-item">  <b>Profil :</b> Y (oui) ou N (non), ce qui permet de savoir si l’élément de formation appartient au profil.
             de la branche ou de la filière. Cet attribut permet de valider (ou pas) les crédits du TCBR et de
             la filière.</li>
-        <li class="list-group-item">    <b>Credit :</b> nombre de crédits obtenus.</li>
-        <li class="list-group-item">     <b>Résultat :</b> A, ...F, ABS, RES, ADM, ...</li>
+        <li class="list-group-item">  <b>Credit :</b> nombre de crédits obtenus.</li>
+        <li class="list-group-item"> <b>Résultat :</b> A, ...F, ABS, RES, ADM, ...</li>
         </p></ul>
 </div>
 </div>

@@ -1,12 +1,11 @@
 <?php
-
 include "header.php";
 require_once "baseConnect.php";
-$numCursus=23;
-$requete='SELECT * FROM eleparcours WHERE numCursus =' . $numCursus;
+$numCursus = $_GET["numCursus"];
+$requete = 'SELECT * FROM eleparcours WHERE numCursus =' . $numCursus;
 $reponse = $database->query($requete);
-$cursus=[];
-while($data = $reponse->fetch()){
+$cursus = [];
+while ($data = $reponse->fetch()) {
     array_push($cursus, $data);
 };
 $CS_TCBR = 0;
@@ -24,52 +23,52 @@ $NPML = false;
 $SE = false;
 $total = 0;
 foreach ($cursus as $key => $element) {
-    if ($element["resultat"]!="F" && $element["resultat"]!="ABS" && $element["resultat"]!="RES"){
-    $total += $element["credit"];
-    switch ($element["categorie"]) {
-        case "CS":
-            if ($element["utt"] == "Y") {
-                $CS_UTT += $element["credit"];
-            }
-            if ($element["affectation"] == "TCBR") {
-                $CS_TCBR += $element["credit"];
-            } else {
-                $CS_FCBR += $element["credit"];
-            }
-            break;
-        case "TM":
-            if ($element["utt"] == "Y") {
-                $TM_UTT += $element["credit"];
-            }
-            if ($element["affectation"] == "TCBR") {
-                $TM_TCBR += $element["credit"];
-            } else {
-                $TM_FCBR += $element["credit"];
-            }
-            break;
-        case "ST":
-            if ($element["affectation"] == "TCBR") {
-                $ST_TCBR += $element["credit"];
-            } else {
-                $ST_FCBR += $element["credit"];
-            }
-            break;
-        case "EC":
-            $EC += $element["credit"];
-            break;
-        case "ME":
-            $ME += $element["credit"];
-            break;
-        case "CT":
-            $CT += $element["credit"];
-            break;
-        case "NPML":
-            $NPML = true;
-            break;
-        case "SE":
-            $SE = true;
-            break;
-    }
+    if ($element["resultat"] != "F" && $element["resultat"] != "ABS" && $element["resultat"] != "RES") {
+        $total += $element["credit"];
+        switch ($element["categorie"]) {
+            case "CS":
+                if ($element["utt"] == "Y") {
+                    $CS_UTT += $element["credit"];
+                }
+                if ($element["affectation"] == "TCBR") {
+                    $CS_TCBR += $element["credit"];
+                } else {
+                    $CS_FCBR += $element["credit"];
+                }
+                break;
+            case "TM":
+                if ($element["utt"] == "Y") {
+                    $TM_UTT += $element["credit"];
+                }
+                if ($element["affectation"] == "TCBR") {
+                    $TM_TCBR += $element["credit"];
+                } else {
+                    $TM_FCBR += $element["credit"];
+                }
+                break;
+            case "ST":
+                if ($element["affectation"] == "TCBR") {
+                    $ST_TCBR += $element["credit"];
+                } else {
+                    $ST_FCBR += $element["credit"];
+                }
+                break;
+            case "EC":
+                $EC += $element["credit"];
+                break;
+            case "ME":
+                $ME += $element["credit"];
+                break;
+            case "CT":
+                $CT += $element["credit"];
+                break;
+            case "NPML":
+                $NPML = true;
+                break;
+            case "SE":
+                $SE = true;
+                break;
+        }
     }
 }
 $erreur = false;
@@ -138,21 +137,19 @@ if ($total < 180) {
 <div class="container">
 
     <div class="forceSize" style="text-align: center">
-        <?php if ($erreur){
+        <?php
+        if ($erreur) {
             echo "<div class='alert alert-danger' role='alert'><strong>Erreur!<br></strong>" . $message . "</div>";
-        }else{
+        } else {
             echo "<div class='alert alert-success' role='alert'><strong>Bravo!<br></strong>Votre cursus est valide.</div>";
         }
         ?>
 
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Consulter liste cursus</h3>
-            </div>
-            <div class="panel-body">
-                <a href="listStudents.php" class="btn btn-lg btn-default">Liste cursus</a>
-            </div>
+
+        <div class="panel-body">
+            <a href="index.php" class="btn btn-lg btn-primary">Retour liste cursus</a>
         </div>
+
     </div>
 
 </div>

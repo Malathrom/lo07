@@ -34,7 +34,7 @@ addStudent($database, $_GET["numEtu"], $_GET["nom"], $_GET["prenom"], $_GET["TC,
         </div>
 
 
-        <div class="panel panel-success">
+        <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">Ajouter un nouveau Cursus</h3>
             </div>

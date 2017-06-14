@@ -34,32 +34,11 @@ function afficheStudent($list) {
                 <th>Prénom</th>
                 <th>Admission</th>
                 <th>Filière</th>
-                
+
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>45862</td>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>TC</td>
-                <td>MPL</td>
-                
-            </tr>
-            <tr>
-                <td>45993</td>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>BR</td>
-                <td>?</td>
-            </tr>
-            <tr>
-                <td>86521</td>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>BR</td>
-                <td>?</td>
-            </tr>
+
             <?php afficheStudent($list) ?>
 
 
@@ -68,4 +47,5 @@ function afficheStudent($list) {
 
     </table>
 
+    <a href="addStudent.php" class="btn btn-lg btn-primary">Ajouter Etudiant</a>
 </div>

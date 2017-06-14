@@ -28,6 +28,12 @@ $numCursus = $donnees[0] + 1;
 $req = $database->prepare('INSERT INTO cursus(numCursus) VALUES( ? )');
 $req->execute(array($numCursus));
 
+$numEtu=$_GET["numEtu"];
+
+$req = $database->prepare('INSERT INTO attachement(numEtu, numCursus) VALUES(?,?)');
+$req->execute(array($numEtu, $numCursus));
+
+
 function addElement($database, $element, $numCursus) {
 
     $req = $database->prepare('INSERT INTO eleparcours(numele, numsem, label, sigle, categorie, affectation, utt, profil, credit, resultat, numCursus) VALUES(:numele, :numsem, :label, :sigle, :categorie, :affectation, :utt, :profil, :credit, :resultat, :numCursus)');
@@ -58,13 +64,8 @@ for ($j = 0; $j < $_GET["countline"]; $j++) {
             <strong>Bravo!</strong> Le cursus a été ajouté à la base de données.
         </div>
 
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Consulter liste cursus</h3>
-            </div>
-            <div class="panel-body">
-                <a href="listStudents.php" class="btn btn-lg btn-default">Liste cursus</a>
-            </div>
+        <div class="panel-body">
+            <a href="index.php" class="btn btn-lg btn-primary">Retour liste cursus</a>
         </div>
     </div>
 
