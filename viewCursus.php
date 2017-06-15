@@ -79,8 +79,19 @@ $data = $response2->fetch();
 
     </div>
     <br>
-    <form class='form-signin' action='reglement.php'>
-        <input type=hidden name=numCursus value=" <?php echo $_GET["numCursus"]; ?> ">
-        <button class='btn btn-success btn-lg btn-block' type='submit'>Vérifier validité cursus</button>
-    </form>
-</div> 
+    <div class="row" style="text-align: center;">
+        <div class="col-sm-6">
+            <form class='form-signin' action='reglement_actuel.php'>
+                <input type=hidden name=numCursus value=" <?php echo $_GET["numCursus"]; ?> ">
+                <button class='btn btn-success btn-lg btn-block' type='submit'>Vérifier validité cursus (reglement actuel)</button>
+            </form>
+        </div>
+        <div class="col-sm-6">
+            <form class='form-signin' action='reglement_futur.php'>
+                <input type=hidden name=numCursus value=" <?php echo $_GET["numCursus"]; ?> ">
+                <button class='btn btn-success btn-lg btn-block' type='submit'>Vérifier validité cursus (reglement futur)</button>
+            </form>
+        </div>
+
+    </div> 
+</div>
