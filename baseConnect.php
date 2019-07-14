@@ -1,5 +1,4 @@
 <?php
-
 /*
   define('user', 'geninadr');
   define('code', "S8SkOod4");

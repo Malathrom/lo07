@@ -7,11 +7,6 @@
         <img src="utt.jpg" data-src="holder.js/200x200" class="img-thumbnail">
     </div>
 
-
-
-
-
-
     <?php
     require_once 'baseConnect.php';
     $requete = "select * from cursus c, attachement a, etudiant e where c.numCursus=a.numCursus and a.numEtu=e.numEtu order by c.numCursus";
@@ -125,11 +120,6 @@
         </div>
 
     </div>
-
-
-
-
-
 
 </div>
 </body>

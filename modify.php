@@ -89,7 +89,4 @@ $data = $response2->fetch();
         <input type=hidden name=numCursus value=<?php echo $numCursus ?>>
     </form>
 
-
-
-
 </div> 

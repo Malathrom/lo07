@@ -1,7 +1,7 @@
 <?php
+
 include "header.php";
 include "baseConnect.php";
-
 
 $cursus = [];
 for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
@@ -18,7 +18,6 @@ for ($j = 1; $j < $_GET["countline"] + 1; $j++) {
     array_push($element, $_GET["resultat" . $j]);
     array_push($cursus, $element);
 }
-
 
 $reponse = $database->query('SELECT MAX(numCursus) FROM cursus');
 $donnees = $reponse->fetch();

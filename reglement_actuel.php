@@ -1,4 +1,5 @@
 <?php
+
 include "header.php";
 require_once "baseConnect.php";
 $numCursus = $_GET["numCursus"];
@@ -150,5 +151,4 @@ if ($total < 180) {
             </div>
         </div>
     </div>
-
 </div>

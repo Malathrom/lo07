@@ -1,4 +1,5 @@
 <?php
+
 include "header.php";
 require_once 'baseConnect.php';
 $numCursus = $_GET["numCursus"];
